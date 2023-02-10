@@ -15,6 +15,13 @@ Route::get('/redirects', [HomeController::class, 'redirects']);
 Route::get('/users', [AdminController::class, 'allUser'])->name('users');
 Route::get('/deleteUser/{id}', [AdminController::class, 'deleteUser'])->name('deleteUser');
 
+
+
+Route::get('/addFood', [AdminController::class, 'addFood']);
+Route::post('/storeFood', [AdminController::class, 'storeFood'])->name('storeFood');
+
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
