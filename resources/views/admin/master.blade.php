@@ -74,7 +74,9 @@
     <!-- Custom js for this page -->
     <script src="admin/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+    @include('sweetalert::alert')
 </body>
 
 </html>

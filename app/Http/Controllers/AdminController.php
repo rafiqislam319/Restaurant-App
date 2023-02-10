@@ -6,6 +6,7 @@ use App\Models\Food;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -19,8 +20,10 @@ class AdminController extends Controller
     public function deleteUser($id)
     {
         $user = User::find($id);
-        $user->delete();
-        return redirect()->back();
+        if ($user->delete()) {
+            Alert::warning('Warning Title', 'User Delete Successfully');
+            return redirect()->back();
+        }
     }
 
     public function addFood()
@@ -47,9 +50,10 @@ class AdminController extends Controller
         $food->description = $request->description;
         $food->save();
         //return response()->json($food);
-        return redirect()->back();
-        //return redirect()->back()->with('success', 'Food saved successfully');
 
-
+        if ($food->save()) {
+            Alert::success('Success', 'Food Saved Successfully');
+            return redirect()->back();
+        }
     }
 }
