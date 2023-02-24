@@ -56,4 +56,10 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
+
+    public function allFood(){
+        //return 1;
+        $allFood = Food::all();
+        return view('admin.food.foodlist', compact('allFood'));
+    }
 }
