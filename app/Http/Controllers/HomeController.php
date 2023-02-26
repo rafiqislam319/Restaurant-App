@@ -10,17 +10,17 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $allFoods = Food::all();
-        return view('home', compact('allFoods'));
+        //$allFoods = Food::all();   //I have used FoodServiceProvider class for displaying foods in frontend
+        return view('home');
     }
     public function redirects()
     {
-        $allFoods = Food::all();
+        //$allFoods = Food::all();
         $userType = Auth::user()->user_type;
         if ($userType == '1') {
             return view('admin.adminHome');
         } else {
-            return view('home', compact('allFoods'));
+            return view('home');
         }
     }
 }

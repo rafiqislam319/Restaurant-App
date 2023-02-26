@@ -197,6 +197,10 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+        //my custom providers
+        App\Providers\FoodServiceProvider::class,
+
+
     ],
 
     /*
