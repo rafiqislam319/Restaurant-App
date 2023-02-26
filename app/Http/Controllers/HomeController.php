@@ -10,16 +10,17 @@ class HomeController extends Controller
 {
     public function index()
     {
-        //$allFood = Food::all();
-        return view('home');
+        $allFoods = Food::all();
+        return view('home', compact('allFoods'));
     }
     public function redirects()
     {
+        $allFoods = Food::all();
         $userType = Auth::user()->user_type;
         if ($userType == '1') {
             return view('admin.adminHome');
         } else {
-            return view('home');
+            return view('home', compact('allFoods'));
         }
     }
 }
