@@ -16,13 +16,17 @@ Route::get('/users', [AdminController::class, 'allUser'])->name('users');
 Route::get('/deleteUser/{id}', [AdminController::class, 'deleteUser'])->name('deleteUser');
 
 
-
+//Food model
 Route::get('/addFood', [AdminController::class, 'addFood']);
 Route::post('/storeFood', [AdminController::class, 'storeFood'])->name('storeFood');
 Route::get('/allFood', [AdminController::class, 'allFood']);
 Route::get('/updateform/{id}', [AdminController::class, 'updateform']);
 Route::post('/updateFood/{id}', [AdminController::class, 'updateFood'])->name('updateFood');
 Route::get('/deleteFood/{id}', [AdminController::class, 'deleteFood']);
+
+//
+Route::post('/reservation', [AdminController::class, 'reservation']);
+Route::get('/view/reservation', [AdminController::class, 'viewReservation']);
 
 
 

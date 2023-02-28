@@ -49,7 +49,7 @@
             </li>
 
             <li class="nav-item menu-items">
-                <a class="nav-link" href="{{ url('kajho') }}">
+                <a class="nav-link" href="{{ url('view/reservation') }}">
                     <span class="menu-icon">
                         <i class="mdi mdi-file-document-box"></i>
                     </span>

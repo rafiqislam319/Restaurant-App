@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -105,5 +106,38 @@ class AdminController extends Controller
 
         Alert::success('Success', 'Food Updated Successfully');
         return redirect()->back();
+    }
+
+    //reservation 
+    public function reservation(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:255',
+            'guest' => 'required|integer|min:1',
+            'date' => 'required|date',
+            'time' => 'required|string|max:255',
+            'message' => 'nullable|string|max:1000',
+        ]);
+
+        // Create a new Reservation instance and populate it with the validated data
+        $reservation = new Reservation();
+        $reservation->name = $validatedData['name'];
+        $reservation->email = $validatedData['email'];
+        $reservation->phone = $validatedData['phone'];
+        $reservation->guest = $validatedData['guest'];
+        $reservation->date = $validatedData['date'];
+        $reservation->time = $validatedData['time'];
+        $reservation->message = $validatedData['message'];
+
+        // Save the new Reservation instance to the database
+        $reservation->save();
+
+        return redirect()->back()->with('success', 'Reservation created successfully!');
+    }
+    public function viewReservation(){
+        $reservations = Reservation::all();
+        return view('admin.reservation.viewReservation', compact('reservations'));
     }
 }
