@@ -20,6 +20,9 @@ Route::get('/deleteUser/{id}', [AdminController::class, 'deleteUser'])->name('de
 Route::get('/addFood', [AdminController::class, 'addFood']);
 Route::post('/storeFood', [AdminController::class, 'storeFood'])->name('storeFood');
 Route::get('/allFood', [AdminController::class, 'allFood']);
+Route::get('/updateform/{id}', [AdminController::class, 'updateform']);
+Route::post('/updateFood/{id}', [AdminController::class, 'updateFood'])->name('updateFood');
+Route::get('/deleteFood/{id}', [AdminController::class, 'deleteFood']);
 
 
 

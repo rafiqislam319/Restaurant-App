@@ -26,6 +26,7 @@
                     <th class="col">Price</th>
                     <th class="col">Image</th>
                     <th class="col">Description</th>
+                    <th class="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,12 @@
                     <td class="col"><img src="{{ asset('images/' . $food->image) }}" alt="image" height="100px" width="100px">
                     </td>
                     <td class="col col-description" style="height: 100px;">{{ $food->description }}</td>
+
+                    <td>
+                        <a href="{{ url('updateform', $food->id) }}" class="btn btn-success btn-xs">Update</a>
+                        <!-- <a href="#" class="btn btn-danger btn-xs">Delete</a> -->
+                        <a href="{{ url('deleteFood', $food->id) }}" class="btn btn-danger btn-xs">Delete</a>
+                    </td>
 
 
                 </tr>
