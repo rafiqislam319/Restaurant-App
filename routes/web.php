@@ -24,9 +24,13 @@ Route::get('/updateform/{id}', [AdminController::class, 'updateform']);
 Route::post('/updateFood/{id}', [AdminController::class, 'updateFood'])->name('updateFood');
 Route::get('/deleteFood/{id}', [AdminController::class, 'deleteFood']);
 
-//
+//reservation
 Route::post('/reservation', [AdminController::class, 'reservation']);
 Route::get('/view/reservation', [AdminController::class, 'viewReservation']);
+
+//chefs
+Route::get('/add/chefs', [AdminController::class, 'addChefs']);
+Route::post('storeChef', [AdminController::class, 'storeChef']);
 
 
 

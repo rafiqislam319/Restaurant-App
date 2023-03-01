@@ -15,7 +15,7 @@
             <div class="owl-menu-item owl-carousel">
                 @foreach ($allFoods as $allFood )
                 <div class="item">
-                    <div style="background-image: url('/images/{{$allFood->image}}');" class='card'> <!-- this will keep the image style same type but if we use img tag image style will be changed -->
+                    <div style="background-image: url('/images/{{$allFood->image}}'); background-position: center center; background-size: cover;" class='card'> <!-- this will keep the image style same type but if we use img tag image style will be changed -->
                         <!-- <img src="{{ asset('images/' . $allFood->image) }}" alt="image"> -->
                         <div class="price">
                             <h6>${{ $allFood->price }}</h6>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\FoodChef;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -139,5 +140,34 @@ class AdminController extends Controller
     public function viewReservation(){
         $reservations = Reservation::all();
         return view('admin.reservation.viewReservation', compact('reservations'));
+    }
+
+    
+
+    //chefs
+
+    public function addChefs(){
+        return view('admin.chefs.addChefs');
+    }
+
+    public function storeChef(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'speciality' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $imageName = time() . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        $foodChef = new FoodChef();
+        $foodChef->name = $validatedData['name'];
+        $foodChef->speciality = $validatedData['speciality'];
+        $foodChef->image = $imageName;
+
+        $foodChef->save();
+        Alert::success('Success', 'Chefs Saved Successfully');
+        return redirect()->back();
     }
 }

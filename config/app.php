@@ -199,6 +199,7 @@ return [
 
         //my custom providers
         App\Providers\FoodServiceProvider::class,
+        App\Providers\ChefServiceProvider::class,
 
 
     ],
