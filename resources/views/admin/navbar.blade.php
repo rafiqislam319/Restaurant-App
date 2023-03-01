@@ -40,12 +40,19 @@
             </li>
 
             <li class="nav-item menu-items">
-                <a class="nav-link" href="{{ url('/add/chefs') }}"">
-                    <span class=" menu-icon">
-                    <i class="mdi mdi-chart-bar"></i>
+                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-icon">
+                        <i class="mdi mdi-chart-bar"></i>
                     </span>
                     <span class="menu-title">Chefs</span>
+                    <i class="menu-arrow"></i>
                 </a>
+                <div class="collapse" id="ui-basic">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="{{ url('/add/chefs') }}">Add Chefs</a></li>
+                        <li class=" nav-item"> <a class="nav-link" href="{{ url('/manage/chefs') }}">Manage Chefs</a></li>
+                    </ul>
+                </div>
             </li>
 
             <li class="nav-item menu-items">

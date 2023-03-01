@@ -31,6 +31,10 @@ Route::get('/view/reservation', [AdminController::class, 'viewReservation']);
 //chefs
 Route::get('/add/chefs', [AdminController::class, 'addChefs']);
 Route::post('storeChef', [AdminController::class, 'storeChef']);
+Route::get('/manage/chefs', [AdminController::class, 'manageChef']);
+Route::get('/delete/chef/{id}', [AdminController::class, 'deleteChef']);
+Route::get('update/chef/{id}', [AdminController::class, 'updateChef']);
+Route::post('/updateChefInfo/{id}', [AdminController::class, 'updateChefInfo']);
 
 
 

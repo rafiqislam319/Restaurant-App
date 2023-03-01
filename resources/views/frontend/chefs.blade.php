@@ -20,7 +20,7 @@
                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                         <!-- <img src="assets/images/chefs-01.jpg" alt="Chef #1"> -->
-                        <img style="background-image: url('/images/{{$foodChefs->image}}');" class='card'>
+                        <img style="background-image: url('/images/{{$foodChefs->image}}'); background-position: center center; background-size: cover; " class='card'>
                     </div>
                     <div class="down-content">
                         <h4>{{ $foodChefs->name }}</h4>

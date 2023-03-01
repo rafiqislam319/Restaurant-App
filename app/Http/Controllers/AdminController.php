@@ -137,20 +137,23 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Reservation created successfully!');
     }
-    public function viewReservation(){
+    public function viewReservation()
+    {
         $reservations = Reservation::all();
         return view('admin.reservation.viewReservation', compact('reservations'));
     }
 
-    
+
 
     //chefs
 
-    public function addChefs(){
+    public function addChefs()
+    {
         return view('admin.chefs.addChefs');
     }
 
-    public function storeChef(Request $request){
+    public function storeChef(Request $request)
+    {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'speciality' => 'required|string|max:255',
@@ -169,5 +172,45 @@ class AdminController extends Controller
         $foodChef->save();
         Alert::success('Success', 'Chefs Saved Successfully');
         return redirect()->back();
+    }
+
+    public function manageChef()
+    {
+        $chefs = FoodChef::all();
+        return view('admin.chefs.manageChefs', compact('chefs'));
+    }
+    public function deleteChef($id)
+    {
+        $chefs = FoodChef::findOrFail($id);
+        if ($chefs->delete()) {
+            Alert::success('Success', 'Chef Deleted Successfully');
+            return redirect()->back();
+        }
+    }
+    public function updateChef($id){
+        $chef = FoodChef::findOrFail($id);
+        return view('admin.chefs.updateChefs', compact('chef'));
+    }
+    public function updateChefInfo(Request $request, $id){
+        $foodChef = FoodChef::findOrFail($id);
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'speciality' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $imageName = time() . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        $foodChef->name = $validatedData['name'];
+        $foodChef->speciality = $validatedData['speciality'];
+        $foodChef->image = $imageName;
+
+        $foodChef->save();
+        Alert::success('Success', 'Chefs Updated Successfully');
+        return redirect()->back();
+        
+        
     }
 }

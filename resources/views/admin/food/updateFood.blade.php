@@ -25,7 +25,7 @@
             </div>
             <div>
                 <label for="price">Choose new image</label>
-                <input type="file" name="image" required>
+                <input type="file" name="image">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
