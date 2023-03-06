@@ -21,13 +21,18 @@ class HomeController extends Controller
         if ($userType == '1') {
             return view('admin.adminHome');
         } else {
-            return view('home');
+
+            $userId = Auth::id();
+            $count = Cart::where('user_id', $userId)->count();
+
+            return view('home', compact('count'));
         }
     }
 
-    public function addtoCart(Request $request, $id){
-       
-        if(Auth::id()){
+    public function addtoCart(Request $request, $id)
+    {
+
+        if (Auth::id()) {
             $userId = Auth::id();
 
             $foo_id = $id;
@@ -39,11 +44,15 @@ class HomeController extends Controller
             //dd($cart);
             $cart->save();
 
-            
+
             return redirect()->back();
-        }else{
-            
+        } else {
+
             return redirect('/login');
         }
+    }
+    public function showCart(Request $request, $id)
+    {
+        return view('frontend.cart');
     }
 }

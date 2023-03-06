@@ -39,6 +39,7 @@ Route::post('/updateChefInfo/{id}', [AdminController::class, 'updateChefInfo']);
 
 //cart
 Route::post('add/cart/{id}', [HomeController::class, 'addtoCart']);
+Route::get('show/cart/{id}', [HomeController::class, 'showCart']);
 
 
 
