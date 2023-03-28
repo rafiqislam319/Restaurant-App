@@ -38,7 +38,7 @@
                         <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
 
                         @auth
-                        <li class="scroll-to-section"><a href="{{ url('show/cart', Auth::user()->id) }}">Cart[{{$count}}]</a></li>
+                        <li class="scroll-to-section"><a href="{{ url('show/cart', Auth::user()->id) }}">Cart[ {{$count}} ]</a></li>
                         @endauth
 
                         @guest
