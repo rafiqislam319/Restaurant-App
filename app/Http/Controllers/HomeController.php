@@ -53,11 +53,21 @@ class HomeController extends Controller
     }
     public function showCart(Request $request, $id)
     {
+        //for counting cart data addes by user
         $count = Cart::where('user_id', $id)->count();
 
+        //to remove from cart
+        $cart = Cart::select('*')->where('user_id', '=', $id)->get();
+
+        //for getting added cart data's all info
         $cartData = Cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
         //dd($cartData);
 
-        return view('frontend.cart', compact('count', 'cartData'));
+        return view('frontend.cart', compact('count', 'cartData', 'cart'));
+    }
+    public function removeCart($id){
+        $data = Cart::where('id', $id);
+        $data->delete();
+        return redirect()->back();
     }
 }

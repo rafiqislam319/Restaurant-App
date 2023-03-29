@@ -19,6 +19,7 @@
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -27,6 +28,15 @@
                                     <td>{{ $cartData->title }}</td>
                                     <td>{{ $cartData->price }}</td>
                                     <td>{{ $cartData->quantity }}</td>
+
+                                </tr>
+                                @endforeach
+
+                                @foreach ($cart as $cart)
+                                <tr style="position: relative; top:-110px; right:-620px">
+                                    <td>
+                                        <a href="{{ url('/remove/cart', $cart->id) }}" class="btn btn-info">Remove</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
