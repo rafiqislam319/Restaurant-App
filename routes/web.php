@@ -42,6 +42,10 @@ Route::post('add/cart/{id}', [HomeController::class, 'addtoCart']);
 Route::get('show/cart/{id}', [HomeController::class, 'showCart']);
 Route::get('/remove/cart/{id}', [HomeController::class, 'removeCart']);
 
+//order
+Route::post('/confirm/order', [HomeController::class, 'orderConfirm']);
+
+
 
 
 Route::middleware([

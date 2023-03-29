@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Food;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -65,9 +66,27 @@ class HomeController extends Controller
 
         return view('frontend.cart', compact('count', 'cartData', 'cart'));
     }
-    public function removeCart($id){
+    public function removeCart($id)
+    {
         $data = Cart::where('id', $id);
         $data->delete();
+        return redirect()->back();
+    }
+
+    public function orderConfirm(Request $request)
+    {
+        foreach ($request->title as $key => $title) {
+            $data = new Order;
+            $data->title = $title;
+            $data->price = $request->price[$key];
+            $data->quantity = $request->quantity[$key];
+
+            $data->customer_name = $request->customer_name;
+            $data->phone = $request->phone;
+            $data->address = $request->address;
+
+            $data->save();
+        }
         return redirect()->back();
     }
 }

@@ -22,29 +22,40 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach ($cartData as $cartData)
-                                <tr>
-                                    <td>{{ $cartData->title }}</td>
-                                    <td>{{ $cartData->price }}</td>
-                                    <td>{{ $cartData->quantity }}</td>
+                            <form action="{{ url('/confirm/order') }}" method="POST">
+                                @csrf
+                                <tbody>
+                                    @foreach ($cartData as $cartData)
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="title[]" value="{{ $cartData->title }}" hidden>
+                                            {{ $cartData->title }}
+                                        </td>
+                                        <td>
+                                            <input type="text" name="price[]" value="{{ $cartData->price }}" hidden>
+                                            {{ $cartData->price }}
+                                        </td>
+                                        <td>
+                                            <input type="text" name="quantity[]" value="{{ $cartData->quantity }}" hidden>
+                                            {{ $cartData->quantity }}
+                                        </td>
 
-                                </tr>
-                                @endforeach
+                                    </tr>
+                                    @endforeach
 
-                                @foreach ($cart as $cart)
-                                <tr style="position: relative; top:-60px; right:-620px">
-                                    <td>
-                                        <a href="{{ url('/remove/cart', $cart->id) }}" class="btn btn-info">Remove</a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
+                                    @foreach ($cart as $cart)
+                                    <tr style="position: relative; top:-60px; right:-620px">
+                                        <td>
+                                            <a href="{{ url('/remove/cart', $cart->id) }}" class="btn btn-info">Remove</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
                         </table>
                     </div>
                 </div>
-                <div class="card-footer bg-white">
-                    <button class="btn btn-primary btn-sm ml-auto" id="orderButton">Order</button>
+                <div class="card-footer">
+                    <button style="background-color:darkseagreen" class="btn btn-primary btn-sm ml-auto" type="button" id="orderButton">Order</button>
                 </div>
             </div>
         </div>
@@ -62,7 +73,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Name">
+                        <input type="text" class="form-control" placeholder="Name" name="customer_name">
                     </div>
                 </div>
                 <div class="form-group">
@@ -70,7 +81,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-phone"></i></span>
                         </div>
-                        <input type="tel" class="form-control" placeholder="Phone">
+                        <input type="tel" class="form-control" placeholder="Phone" name="phone">
                     </div>
                 </div>
                 <div class="form-group">
@@ -78,19 +89,20 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-home"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Address">
+                        <input type="text" class="form-control" placeholder="Address" name="address">
                     </div>
                 </div>
                 <!-- <button type="submit" class="btn btn-primary bg-green">Save</button> -->
                 <div class="bg-white">
                     <button class="btn btn-primary btn-sm ml-auto">Confirm</button>
-                    <button class="btn btn-danger btn-sm ml-auto" id="orderCancel">Cancel</button>
+                    <button style="background-color:peru" class="btn btn-danger btn-sm ml-auto" type="button" id="orderCancel">Cancel</button>
                 </div>
             </form>
 
         </div>
     </div>
 </div>
+</form>
 
 @endsection
 
