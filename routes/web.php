@@ -45,6 +45,8 @@ Route::get('/remove/cart/{id}', [HomeController::class, 'removeCart']);
 //order
 Route::post('/confirm/order', [HomeController::class, 'orderConfirm']);
 
+Route::get('/order/list', [AdminController::class, 'orderList']);
+
 
 
 

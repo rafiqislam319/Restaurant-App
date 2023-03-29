@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Food;
 use App\Models\FoodChef;
+use App\Models\Order;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -187,11 +188,13 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
-    public function updateChef($id){
+    public function updateChef($id)
+    {
         $chef = FoodChef::findOrFail($id);
         return view('admin.chefs.updateChefs', compact('chef'));
     }
-    public function updateChefInfo(Request $request, $id){
+    public function updateChefInfo(Request $request, $id)
+    {
         $foodChef = FoodChef::findOrFail($id);
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -210,7 +213,11 @@ class AdminController extends Controller
         $foodChef->save();
         Alert::success('Success', 'Chefs Updated Successfully');
         return redirect()->back();
-        
-        
+    }
+    
+    public function orderList()
+    {
+        $orderDetails = Order::all();
+        return view('admin.order.orderList', compact('orderDetails'));
     }
 }
