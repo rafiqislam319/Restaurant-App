@@ -12,6 +12,11 @@ class HomeController extends Controller
 {
     public function index()
     {
+        if (Auth::id()) {
+            return redirect('redirects');
+        }
+        else
+
         //$allFoods = Food::all();   //I have used FoodServiceProvider class for displaying foods in frontend
         return view('home');
     }
@@ -54,17 +59,22 @@ class HomeController extends Controller
     }
     public function showCart(Request $request, $id)
     {
-        //for counting cart data addes by user
-        $count = Cart::where('user_id', $id)->count();
+        if(Auth::id()==$id){
+            //for counting cart data addes by user
+            $count = Cart::where('user_id', $id)->count();
 
-        //to remove from cart
-        $cart = Cart::select('*')->where('user_id', '=', $id)->get();
+            //to remove from cart
+            $cart = Cart::select('*')->where('user_id', '=', $id)->get();
 
-        //for getting added cart data's all info
-        $cartData = Cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
-        //dd($cartData);
+            //for getting added cart data's all info
+            $cartData = Cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
+            //dd($cartData);
 
-        return view('frontend.cart', compact('count', 'cartData', 'cart'));
+            return view('frontend.cart', compact('count', 'cartData', 'cart'));
+        }
+        else{
+            return redirect()->back();
+        }
     }
     public function removeCart($id)
     {

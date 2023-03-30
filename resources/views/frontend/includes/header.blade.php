@@ -6,6 +6,13 @@
                     <!-- ***** Logo Start ***** -->
                     <a href="{{url('/redirects')}}" class="logo">
                         <img src="assets/images/klassy-logo.png" align="klassy cafe html template">
+
+
+                        <!-- To make menu button for mobile responsive mode -->
+                        <a class="menu-trigger">
+                            <span>Menu</span>
+                        </a>
+
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
