@@ -214,10 +214,18 @@ class AdminController extends Controller
         Alert::success('Success', 'Chefs Updated Successfully');
         return redirect()->back();
     }
-    
+
     public function orderList()
     {
         $orderDetails = Order::all();
+        return view('admin.order.orderList', compact('orderDetails'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $orderDetails = Order::where('title', 'LIKE', '%' . $search . '%')->get();
+
         return view('admin.order.orderList', compact('orderDetails'));
     }
 }

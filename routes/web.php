@@ -47,6 +47,9 @@ Route::post('/confirm/order', [HomeController::class, 'orderConfirm']);
 
 Route::get('/order/list', [AdminController::class, 'orderList']);
 
+//search option
+Route::get('/search', [AdminController::class, 'search']);
+
 
 
 

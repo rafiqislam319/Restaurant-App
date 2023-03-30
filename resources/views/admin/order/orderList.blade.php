@@ -7,8 +7,16 @@
     }
 </style>
 <h3 class="text-center">Order List</h3>
+<form action="{{ url('/search') }}" method="get">
+    @csrf
+    <input type="text" name="search" style="color:blue;">
+    <input type="submit" value="Search" class="btn btn-success">
+</form>
 <div class="container">
-    <div class="row">
+
+
+    <div class="row" style="padding: 20px;">
+
 
         <table class="table table-striped table-dark">
             <thead>
