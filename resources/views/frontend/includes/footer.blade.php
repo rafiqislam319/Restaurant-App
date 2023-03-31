@@ -13,14 +13,14 @@
             </div>
             <div class="col-lg-4">
                 <div class="logo">
-                    <a href="index.html"><img src="assets/images/white-logo.png" alt=""></a>
+                    <a href="{{url('/')}}"><img src="assets/images/white-logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-4 col-xs-12">
                 <div class="left-text-content">
-                    <p>© Copyright Klassy Cafe Co.
+                    <p>© Copyright rafiqislam319.co
 
-                        <br>Design: TemplateMo
+                        <br>Developed by: Rafiqul
                     </p>
                 </div>
             </div>

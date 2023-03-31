@@ -1470,7 +1470,8 @@ footer
 footer {
   margin-top: 60px;
   padding: 50px 0px;
-  background-color: #fb5849;
+  /*background-color: #fb5849;*/
+  background: linear-gradient(to right, #33ccff 0%, #99ff33 100%);
 }
 
 footer .left-text-content p {

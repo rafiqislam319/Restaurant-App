@@ -4,7 +4,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="{{url('/redirects')}}" class="logo">
+                    <a href="{{url('/')}}" class="logo">
                         <img src="assets/images/klassy-logo.png" align="klassy cafe html template">
 
 
@@ -17,7 +17,7 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="{{url('/redirects')}}" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{url('/')}}" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="#about">About</a></li>
 
                         <!-- 
@@ -90,7 +90,7 @@
             <div class="col-lg-4">
                 <div class="left-content">
                     <div class="inner-content">
-                        <h4>KlassyCafe</h4>
+                        <h4>BdFC Cafe</h4>
                         <h6>THE BEST EXPERIENCE</h6>
                         <div class="main-white-button scroll-to-section">
                             <a href="#reservation">Make A Reservation</a>
@@ -104,21 +104,21 @@
                         <!-- Item -->
                         <div class="item">
                             <div class="img-fill">
-                                <img src="assets/images/slide-01.jpg" alt="">
+                                <img src="assets/images/slide01.jpg" alt="">
                             </div>
                         </div>
                         <!-- // Item -->
                         <!-- Item -->
                         <div class="item">
                             <div class="img-fill">
-                                <img src="assets/images/slide-02.jpg" alt="">
+                                <img src="assets/images/slide02.jpg" alt="">
                             </div>
                         </div>
                         <!-- // Item -->
                         <!-- Item -->
                         <div class="item">
                             <div class="img-fill">
-                                <img src="assets/images/slide-03.jpg" alt="">
+                                <img src="assets/images/slide03.jpg" alt="">
                             </div>
                         </div>
                         <!-- // Item -->

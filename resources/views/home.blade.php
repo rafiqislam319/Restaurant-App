@@ -10,7 +10,7 @@
                         <h6>About Us</h6>
                         <h2>We Leave A Delicious Memory For You</h2>
                     </div>
-                    <p>Klassy Cafe is one of the best <a href="https://templatemo.com/tag/restaurant" target="_blank" rel="sponsored">restaurant HTML templates</a> with Bootstrap v4.5.2 CSS framework. You can download and feel free to use this website template layout for your restaurant business. You are allowed to use this template for commercial purposes. <br><br>You are NOT allowed to redistribute the template ZIP file on any template donwnload website. Please contact us for more information.</p>
+                    <p>Welcome to BdFC Cafe, where great food and good times come together. Our restaurant is a family-owned business located in the heart of the city, serving delicious food inspired by Bangladeshi and international cuisines. <br><br>We also offer catering services for events and parties, so whether you're planning a wedding, corporate event, or private party, BdFC Cafe can provide delicious food that will impress your guests..</p>
                     <div class="row">
                         <div class="col-4">
                             <img src="assets/images/about-thumb-01.jpg" alt="">
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-lg-4 offset-lg-4 text-center">
                 <div class="section-heading">
-                    <h6>Klassy Week</h6>
+                    <h6>Special Week</h6>
                     <h2>This Week’s Special Meal Offers</h2>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                                                     <div class="tab-item">
                                                         <img src="assets/images/tab-item-01.png" alt="">
                                                         <h4>Fresh Chicken Salad</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                        <p>Fresh Chicken Salad is a delicious and healthy dish made with tender chicken, crisp vegetables, and a flavorful dressing.</p>
                                                         <div class="price">
                                                             <h6>$10.50</h6>
                                                         </div>
@@ -94,7 +94,7 @@
                                                     <div class="tab-item">
                                                         <img src="assets/images/tab-item-02.png" alt="">
                                                         <h4>Orange Juice</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                        <p>Orange juice is a refreshing beverage made from freshly squeezed oranges.</p>
                                                         <div class="price">
                                                             <h6>$8.50</h6>
                                                         </div>
@@ -104,7 +104,7 @@
                                                     <div class="tab-item">
                                                         <img src="assets/images/tab-item-03.png" alt="">
                                                         <h4>Fruit Salad</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                        <p>Fruit salad is a healthy and delicious dish made with a variety of fresh fruits.</p>
                                                         <div class="price">
                                                             <h6>$9.90</h6>
                                                         </div>
@@ -120,7 +120,7 @@
                                                     <div class="tab-item">
                                                         <img src="assets/images/tab-item-04.png" alt="">
                                                         <h4>Eggs Omelette</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                        <p>Egg omelette: whisked eggs cooked with fillings.</p>
                                                         <div class="price">
                                                             <h6>$6.50</h6>
                                                         </div>
@@ -130,7 +130,7 @@
                                                     <div class="tab-item">
                                                         <img src="assets/images/tab-item-05.png" alt="">
                                                         <h4>Dollma Pire</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                        <p>Is a delicious breakfast food specially for good nutritions</p>
                                                         <div class="price">
                                                             <h6>$5.00</h6>
                                                         </div>
@@ -140,7 +140,7 @@
                                                     <div class="tab-item">
                                                         <img src="assets/images/tab-item-06.png" alt="">
                                                         <h4>Omelette & Cheese</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
+                                                        <p>Omelette and cheese is a popular breakfast dish made by whisking eggs, cooking them with cheese.</p>
                                                         <div class="price">
                                                             <h6>$4.10</h6>
                                                         </div>
